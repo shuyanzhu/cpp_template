@@ -3,6 +3,11 @@ project(ftp_client)
 add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+# clang++
+# set(CMAKE_CXX_FLAGS "-nostdinc++ -std=c++17 -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc") # 使用clang++时使用gnu
+# set(CMAKE_CXX_FLAGS "-O0 -std=c++2a -stdlib=libc++")
+# set(LIBRARIES_TO_LINK "c++abi")
+
 # 头文件搜索路径、连接器搜索路径
 include_directories(include)
 
