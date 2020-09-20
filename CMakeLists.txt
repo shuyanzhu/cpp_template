@@ -8,7 +8,7 @@ add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 # set(CMAKE_CXX_FLAGS "-nostdinc++ -std=c++17 -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc") # g++使用libc++
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wl,-rpath,'/home/zhm/bin/llvm/lib'") # clang++, -Wl选项用来比避免lldb-mi找不到链接库
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wl,-rpath,/home/zhm/bin/llvm/lib -Wno-unused-command-line-argument") # clang++, -Wl选项用来比避免lldb-mi找不到链接库
 # set(LIBRARIES_TO_LINK "c++abi")
 
 # 头文件搜索路径
@@ -17,7 +17,7 @@ include_directories(include)
 include_directories(./third_party/include)
 # add_subdirectory(./third_party/)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${PROJECT_SOURCE_DIR}/third_party/lib")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,-rpath,'$ORIGIN/third_party/lib/':'$ORIGIN/../third_party/lib/'") # 第三方库查找路径
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,-rpath,$ORIGIN/third_party/lib/:$ORIGIN/../third_party/lib/") # 第三方库查找路径
 
 # 业务相关
 # set(Boost_USE_STATIC_LIBS ON)
