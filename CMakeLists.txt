@@ -8,7 +8,7 @@ add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 # set(CMAKE_CXX_FLAGS "-nostdinc++ -std=c++17 -nodefaultlibs -lc++ -lc++abi -lm -lc -lgcc_s -lgcc") # g++使用libc++
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wl,-rpath,'/home/zhm/bin/llvm/lib'") # clang++
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -Wl,-rpath,'/home/zhm/bin/llvm/lib'") # clang++, -Wl选项用来比避免lldb-mi找不到链接库
 # set(LIBRARIES_TO_LINK "c++abi")
 
 # 头文件搜索路径
